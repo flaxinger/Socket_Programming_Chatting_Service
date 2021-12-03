@@ -1,0 +1,29 @@
+plugins {
+    id 'application'
+}
+
+group 'org.example'
+//version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.20'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    implementation 'com.miglayout:miglayout-swing:5.3'
+//    compileOnly 'com.miglayout:miglayout-swing:5.3'
+//    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
+
+application{
+    mainClass = 'Client.Application'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'Client.Application'
+    }
+    from(configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }) {}
+}
