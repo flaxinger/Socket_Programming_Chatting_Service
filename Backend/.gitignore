@@ -2,3 +2,5 @@
 /.gradle/
 /Application/build/.
 .gitBackend
+.gitignore
+.idea

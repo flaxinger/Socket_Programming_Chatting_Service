@@ -67,11 +67,11 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\Application.jar;%APP_HOME%\lib\lombok-1.18.20.jar;%APP_HOME%\lib\miglayout-swing-5.3.jar;%APP_HOME%\lib\miglayout-core-5.3.jar
+set CLASSPATH=%APP_HOME%\lib\Application.jar;%APP_HOME%\lib\lombok-1.18.20.jar
 
 
 @rem Execute Application
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %APPLICATION_OPTS%  -classpath "%CLASSPATH%" Client.Application %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %APPLICATION_OPTS%  -classpath "%CLASSPATH%" Backend.Application %*
 
 :end
 @rem End local scope for the variables with windows NT shell
