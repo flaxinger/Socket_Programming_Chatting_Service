@@ -98,7 +98,7 @@ public class Chatroom {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+                fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
                 int result = fileChooser.showOpenDialog(interactionBar);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File selectedFile = fileChooser.getSelectedFile();
@@ -146,8 +146,8 @@ public class Chatroom {
             public void actionPerformed(ActionEvent e) {
                 try {
                     dos.writeUTF("USERISLOGGINGOUT");
-                    readMessage.stop();
-                    sendMessage.stop();
+//                    readMessage.stop();
+//                    sendMessage.stop();
                     dos.close();
                     dis.close();
                     socket.close();
@@ -165,8 +165,8 @@ public class Chatroom {
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 try {
                     dos.writeUTF("USERFORCEEXIT");
-                    readMessage.stop();
-                    sendMessage.stop();
+//                    readMessage.stop();
+//                    sendMessage.stop();
                     dos.close();
                     dis.close();
                     socket.close();
