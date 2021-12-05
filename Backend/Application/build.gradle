@@ -1,3 +1,4 @@
+
 plugins {
     id 'application'
 }
@@ -8,7 +9,13 @@ group 'org.example'
 repositories {
     mavenCentral()
 }
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
 
+System.setProperty( "user.dir", project.projectDir.toString() )
+println  "  project dir:  "+ System.getProperty("user.dir");
 dependencies {
     implementation 'org.projectlombok:lombok:1.18.20'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'

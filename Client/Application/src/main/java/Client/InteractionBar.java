@@ -14,6 +14,8 @@ public class InteractionBar extends JPanel{
     private JLabel label;
     private JTextField textField;
     private JButton sendButton;
+    private JButton logoutButton;
+    private JButton fileUpload;
 
     public InteractionBar(){
         InitComponents();
@@ -28,10 +30,14 @@ public class InteractionBar extends JPanel{
         textField = new JTextField(); // accepts upto 10 characters
 
         sendButton = new JButton("Send");
+        logoutButton = new JButton("Logout");
+        fileUpload = new JButton("File");
 
         this.add(label); // Components Added using Flow Layout
         this.add(textField, "w 100%");
         this.add(sendButton);
+        this.add(logoutButton);
+        this.add(fileUpload);
 
     }
 }
