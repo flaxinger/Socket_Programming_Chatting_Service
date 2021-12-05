@@ -2,6 +2,11 @@ plugins {
     id 'application'
 }
 
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 group 'org.example'
 //version '1.0'
 
@@ -27,3 +32,4 @@ jar {
     }
     from(configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }) {}
 }
+

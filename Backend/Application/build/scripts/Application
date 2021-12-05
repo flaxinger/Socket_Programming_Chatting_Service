@@ -80,7 +80,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/Application.jar:$APP_HOME/lib/lombok-1.18.20.jar:$APP_HOME/lib/miglayout-swing-5.3.jar:$APP_HOME/lib/miglayout-core-5.3.jar
+CLASSPATH=$APP_HOME/lib/Application.jar:$APP_HOME/lib/lombok-1.18.20.jar
 
 
 # Determine the Java command to use to start the JVM.
@@ -180,6 +180,6 @@ save () {
 APP_ARGS=`save "$@"`
 
 # Collect all arguments for the java command, following the shell quoting and substitution rules
-eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $APPLICATION_OPTS -classpath "\"$CLASSPATH\"" Client.Application "$APP_ARGS"
+eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $APPLICATION_OPTS -classpath "\"$CLASSPATH\"" Backend.Application "$APP_ARGS"
 
 exec "$JAVACMD" "$@"

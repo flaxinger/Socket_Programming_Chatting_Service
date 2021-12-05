@@ -1,5 +1,8 @@
 package Client;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.DataInputStream;
@@ -8,6 +11,9 @@ import java.io.IOException;
 import javax.swing.*;
 import javax.swing.border.*;
 
+
+@Setter
+@Getter
 public class Login extends JDialog {
 
     private JTextField tfUsername;
@@ -55,29 +61,7 @@ public class Login extends JDialog {
 
         btnLogin = new JButton("Login");
 
-        btnLogin.addActionListener(new ActionListener() {
 
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    dos.writeUTF(getUsername());
-                    dos.writeUTF(getPassword());
-                    String result = dis.readUTF();
-                    System.out.println(result);
-                    if(result.equals("LOGINCOMPLETE")){
-                        succeeded = true;
-                        dispose();
-                    }
-                    else{
-                        tfUsername.setText("");
-                        pfPassword.setText("");
-                        succeeded = false;
-                    }
-                }
-                catch (IOException io){
-                    io.printStackTrace();
-                }
-            }
-        });
 //        btnCancel = new JButton("Cancel");
 //        btnCancel.addActionListener(new ActionListener() {
 //
