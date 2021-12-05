@@ -43,7 +43,7 @@ public class downloadButton extends JLayeredPane {
         textPane.setEditable(false);
         textPane.setBackground(new Color(221, 246,255));
         textPane.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        textPane.setText("Click to Download"+fileName);
+        textPane.setText("Click to Download: "+fileName);
         JButton download = new JButton("Download");
 
 
@@ -58,8 +58,8 @@ public class downloadButton extends JLayeredPane {
                 Socket socket = null;
                 while(true) {
                     try {
-                        Files.createDirectories(Paths.get(System.getProperty("user.home") + "/fileFlaxingerDownload"));
-                        Files.createDirectories(Paths.get(System.getProperty("user.home") + "/fileFlaxingerDownload/"+userId));
+                        Files.createDirectories(Paths.get(System.getProperty("user.dir") + "/fileFlaxingerDownload"));
+                        Files.createDirectories(Paths.get(System.getProperty("user.dir") + "/fileFlaxingerDownload/"+userId));
                         socket = new Socket(InetAddress.getByName("localhost"), FILEDOWNLOADPORT);
                         break;
                     } catch (IOException io) {
@@ -67,8 +67,8 @@ public class downloadButton extends JLayeredPane {
                     }
                 }
 
-                File file = new File(System.getProperty("user.home") + "/fileFlaxingerDownload/"+userId+"/"+fileName);
-                System.out.println(System.getProperty("user.home") + "/fileFlaxingerDownload/"+userId+"/"+fileName);
+                File file = new File(System.getProperty("user.dir") + "/fileFlaxingerDownload/"+userId+"/"+fileName);
+                System.out.println(System.getProperty("user.dir") + "/fileFlaxingerDownload/"+userId+"/"+fileName);
                 try {
                     OutputStream fos = new FileOutputStream(file);
                     InputStream fis = socket.getInputStream();

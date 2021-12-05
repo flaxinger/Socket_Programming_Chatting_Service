@@ -30,12 +30,12 @@ public class Chatroom{
         map = new ConcurrentHashMap<>();
         fileList = new ConcurrentHashMap<>();
         try {
-            Files.createDirectories(Paths.get(System.getProperty("user.home") + "/fileDirectory"));
+            Files.createDirectories(Paths.get(System.getProperty("user.dir") + "/fileDirectory"));
         }
         catch(IOException io) {
             io.printStackTrace();
         }
-        fileDirectory = System.getProperty("user.home")+"/fileDirectory/";
+        fileDirectory = System.getProperty("user.dir")+"/fileDirectory/";
         userList = new ArrayList<>();
     }
 
